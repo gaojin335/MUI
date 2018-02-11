@@ -16,9 +16,12 @@ import java.util.TimerTask;
  */
 @SuppressLint("AppCompatCustomView")
 public class TimerView extends TextView {
+    // 倒计时总数，单位为秒
     private final int totalCount = 30;
-    Timer timer;
+    private Timer timer;
+    // 经过的数字，比如：10代表经过了10秒
     private int throughCount = 0;
+    // 默认显示的文字
     private CharSequence defaultText;
 
     public TimerView(Context context) {
@@ -35,6 +38,7 @@ public class TimerView extends TextView {
     }
 
     /**
+     * 开始倒计时
      * @param remain remain time.
      */
     public void start(int remain) throws RuntimeException {
